@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/reviews')
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
-    <div>
+    <div id="reviews">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="w-full text-center pb-8">
           <svg
@@ -36,104 +43,31 @@ const Reviews = () => {
           </p>
         </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-gray-700  shadow-md rounded-lg p-6">
-            <div className="flex items-center space-x-6 mb-4">
-              <img
-                className="h-28 w-28 object-cover object-center rounded-full"
-                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                alt=""
-              />
-              <div>
-                <p className="text-xl text-white font-normal mb-1">
-                  Keanu Reeves
-                </p>
-                <p className="text-base text-green-500 font-semibold">
-                  Accountant
-                </p>
+          {reviews &&
+            reviews.map((review) => (
+              <div className="bg-gray-700  shadow-md rounded-lg p-6">
+                <div className="flex items-center space-x-6 mb-4">
+                  <img
+                    className="h-28 w-28 object-cover object-center rounded-full"
+                    src={review.img}
+                    alt=""
+                  />
+                  <div>
+                    <p className="text-xl text-white font-normal mb-1">
+                      {review.userName}
+                    </p>
+                    <p className="text-base text-yellow-400 font-semibold">
+                      Buyer
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-gray-400  font-normal text-base">
+                    {review.reviewText}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div>
-              <p className="text-gray-400 leading-loose font-normal text-base">
-                i am a regular member of Fitlab . my attendance is 90%.They
-                always helped me in every way possible. i always do cardio
-                before doing weights i spend 15 minutes on the treadmill before
-                doing mat pilates.
-              </p>
-            </div>
-          </div>
-          <div className="bg-gray-700  shadow-md rounded-lg p-6">
-            <div className="flex items-center space-x-6 mb-4">
-              <img
-                className="h-28 w-28 object-cover object-center rounded-full"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                alt=""
-              />
-              <div>
-                <p className="text-xl text-white font-normal mb-1">
-                  Lucy Carter
-                </p>
-                <p className="text-base text-green-500 font-semibold">
-                  HouseWife
-                </p>
-              </div>
-            </div>
-            <div>
-              <p className="text-gray-400 leading-loose font-normal text-base">
-                Fitlab is a good place for me. I am new here and so excited and
-                curious about this Community. since I have no idea at the moment
-                they will instruct me about my medication and health.
-              </p>
-            </div>
-          </div>
-          <div className="bg-gray-700  shadow-md rounded-lg p-6">
-            <div className="flex items-center space-x-6 mb-4">
-              <img
-                className="h-28 w-28 object-cover object-center rounded-full"
-                src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80"
-                alt=""
-              />
-              <div>
-                <p className="text-xl text-white font-normal mb-1">
-                  Rose Hannaman
-                </p>
-                <p className="text-base text-green-500 font-semibold">
-                  Graphics Designer
-                </p>
-              </div>
-            </div>
-            <div>
-              <p className="text-gray-400 leading-loose font-normal text-base">
-                As a designer i Have to sit all day the table which is very bad
-                for my posture so I found the solution in Fitlab. Now i can work
-                full day without any stress whatsoever!
-              </p>
-            </div>
-          </div>
-          <div className="bg-gray-700 shadow-md rounded-lg p-6">
-            <div className="flex items-center space-x-6 mb-4">
-              <img
-                className="h-28 w-28 object-cover object-center rounded-full"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-                alt=""
-              />
-              <div>
-                <p className="text-xl text-white font-normal mb-1">
-                  Agent Carter
-                </p>
-                <p className="text-base  text-green-500 font-semibold">
-                  SHIELD Spy
-                </p>
-              </div>
-            </div>
-            <div>
-              <p className="text-gray-400 leading-loose font-normal text-base">
-                I'm on the avengers team and i have to run missions , kill
-                enemies which takes a lot of physical strenth, which i got from
-                the FITLAB instructor JIMIN. So fitlab is the best solution for
-                me!
-              </p>
-            </div>
-          </div>
+            ))}
         </div>
       </section>
       ;

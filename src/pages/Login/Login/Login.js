@@ -12,7 +12,7 @@ const Login = () => {
     error,
     setUser,
     setIsLoading,
-    signInUsingGoogle,
+    signInWithGoogle,
 
     loginUser,
   } = useAuth();
@@ -21,15 +21,7 @@ const Login = () => {
   // const redirect_uri = location.state?.from || '/home';
 
   const handleGoogleSignIn = () => {
-    signInUsingGoogle()
-      .then((res) => {
-        setUser(res.user);
-        // history.push(redirect_uri);
-      })
-      .catch((error) => {
-        setError(error.message);
-      })
-      .finally(() => setIsLoading(false));
+    signInWithGoogle(location, history);
   };
 
   // sign in with email pass

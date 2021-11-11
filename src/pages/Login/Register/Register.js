@@ -56,9 +56,8 @@ const Register = () => {
   };
   //register with email and pass
   const handleSignUp = (e) => {
-    registerUser(email, password, name, history);
-
     // check validity
+    e.preventDefault();
     if (password.length <= 6) {
       setError('Password Must be atleast 6 character long');
       return;
@@ -70,10 +69,10 @@ const Register = () => {
     if (password !== rePass) {
       setError("Password Doesn't match!!");
       return;
+    } else {
+      registerUser(email, password, name, history);
+      setError('');
     }
-    setError('');
-
-    e.preventDefault();
   };
 
   return (

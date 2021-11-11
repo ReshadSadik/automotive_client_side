@@ -16,9 +16,11 @@ const Purchase = () => {
     const purchaseData = {
       email: user.email,
       name: user.displayName,
+      userImg: user.photoURL,
       productId: id,
       productName: purchaseProduct.name,
       productImg: purchaseProduct.img_sm,
+      status: 'pending',
       additionalInfo: data,
     };
 

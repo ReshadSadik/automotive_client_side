@@ -22,6 +22,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
+
   // const [admin, setAdmin] = useState(false);
 
   //get all products start
@@ -33,13 +34,12 @@ const useFirebase = () => {
 
   // register a new user
   const registerUser = (email, password, name, history) => {
-    console.log(email, password, name);
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setError('');
-        const newUser = { email, displayName: name };
-        setUser(newUser);
+        // const newUser = { email, displayName: name };
+        // setUser(newUser);
         saveUser(email, name, 'POST');
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
@@ -49,7 +49,7 @@ const useFirebase = () => {
           .catch((error) => {
             setError(error);
           });
-        // history.replace('/login');
+        history.replace('/login');
       })
       .catch((error) => {
         setError(error.message);
@@ -73,6 +73,8 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+
+  // log in with google
 
   const signInWithGoogle = (location, history) => {
     setIsLoading(true);
@@ -107,14 +109,7 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, []);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/users/${user.email}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // setAdmin(data.admin);
-  //     });
-  // }, [user.email]);
-
+  // log out user
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
@@ -127,9 +122,17 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/users/${user.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // setAdmin(data.admin);
+  //     });
+  // }, [user.email]);
+
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('http://localhost:5000/users ', {
+    fetch('http://localhost:5000/users', {
       method: method,
       headers: {
         'content-type': 'application/json',
@@ -143,11 +146,13 @@ const useFirebase = () => {
     isLoading,
     error,
     setError,
+    setUser,
     registerUser,
     loginUser,
     signInWithGoogle,
     logOut,
     products,
+
     // admin,
   };
 };
