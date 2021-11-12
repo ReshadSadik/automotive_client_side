@@ -11,9 +11,11 @@ const Products = () => {
 
       <div className="flex flex-wrap justify-center">
         {products &&
-          products.map((product) => (
-            <Product product={product} key={product._id}></Product>
-          ))}
+          products
+            .slice(0, 6)
+            .map((product) => (
+              <Product product={product} key={product._id}></Product>
+            ))}
       </div>
     </div>
   );

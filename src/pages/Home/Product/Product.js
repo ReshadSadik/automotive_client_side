@@ -27,12 +27,12 @@ const Product = (props) => {
           </div>
           <Link to={`/purchase/${_id}`}>
             <div>
-              <button className="homeCardBtn rounded  text-yellow-600 w-20 sm:text-2xl bg-white">
+              <button className="homeCardBtn rounded  xl:text-yellow-600 text-white  w-20 sm:text-2xl xl:bg-white bg-gray-400">
                 Buy Now
               </button>
             </div>
           </Link>
-          <p className="mt-2 font-semibold text-sm  pb-5 sm:block hidden mb-4 ">
+          <p className="mt-2 font-semibold text-sm  pb-5 sm:block mb-4 ">
             {description}
           </p>
           {/* <Link to={redirectUrl}> */}

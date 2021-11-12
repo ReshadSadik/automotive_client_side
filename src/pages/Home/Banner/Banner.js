@@ -1,20 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import banner from '../../../images/lambo2.jpg';
 
 const Banner = () => {
   return (
-    <div>
+    <div className=" ">
       <div
-        className="bg-cover bg-center   h-auto text-white py-96 object-fill"
+        className="bg-cover bg-center    h-auto text-white xl:py-72 py-48 object-fill"
         style={{
           backgroundImage: `url(${banner}`,
           backgroundPosition: 'center',
-          paddingTop: '323px',
+          paddingTop: '50px',
           backgroundSize: 'cover',
+          width: '100%',
         }}
       >
-        <div className="md:w-1/2 bg-gray-200  text-black  rounded">
-          <p className="font-bold text-yellow-600 text-sm uppercase pt-5 ">
+        <div className="md:w-1/2 bg-gray-200    text-black    rounded">
+          <p className="font-bold text-yellow-600 text-sm xl:mt-36 mt-28  uppercase pt-5 ">
             THE ALL NEW
           </p>
           <hr className="bg-red-500" />
@@ -23,12 +25,12 @@ const Banner = () => {
             Go Beyond Extraordinary. With Captivating details inside and out ,
             maek a grand entrance wherever you go!
           </p>
-          <a
-            href="/"
+          <Link
+            to="/explore"
             className="bg-yellow-400 py-4 px-8 text-black font-bold uppercase text-xs rounded-xl hover:bg-gray-200 hover:text-gray-800"
           >
             Explore All
-          </a>
+          </Link>
         </div>
       </div>
     </div>

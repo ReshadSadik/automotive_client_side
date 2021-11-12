@@ -126,13 +126,13 @@ function Dashboard() {
               )}
 
               <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
-                <Link
+                <div
                   className="text-sm font-bold focus:text-yellow-700 
                  focus:underline  "
                   onClick={logOut}
                 >
                   Log Out
-                </Link>
+                </div>
               </li>
             </ul>
           </div>

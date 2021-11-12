@@ -68,14 +68,16 @@ const Navigation = () => {
                   EXPLORE
                 </Link>
               </li>
-              <li className="mr-3">
-                <Link
-                  className="inline-block font-bold  no-underline hover:text-gray-200 hover:text-underline text-white py-2 px-4"
-                  to="/dashboard"
-                >
-                  DASHBOARD
-                </Link>
-              </li>
+              {user.email && (
+                <li className="mr-3">
+                  <Link
+                    className="inline-block font-bold  no-underline hover:text-gray-200 hover:text-underline text-white py-2 px-4"
+                    to="/dashboard"
+                  >
+                    DASHBOARD
+                  </Link>
+                </li>
+              )}
               <li className="mr-3">
                 {/* <Link
                   className="inline-block font-bold text-white no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
