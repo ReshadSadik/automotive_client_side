@@ -58,14 +58,11 @@ const Register = () => {
   const handleSignUp = (e) => {
     // check validity
     e.preventDefault();
-    if (password.length <= 6) {
+    if (password.length <= 5) {
       setError('Password Must be atleast 6 character long');
       return;
     }
-    if (!/^(?=.*[0-9])/.test(password)) {
-      setError('Password Must have one nubmer!');
-      return;
-    }
+
     if (password !== rePass) {
       setError("Password Doesn't match!!");
       return;

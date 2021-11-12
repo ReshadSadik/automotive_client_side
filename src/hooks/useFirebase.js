@@ -23,7 +23,7 @@ const useFirebase = () => {
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
 
-  // const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState(false);
 
   //get all products start
   useEffect(() => {
@@ -57,7 +57,22 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  // check is admin
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/admin/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          if (data.role) {
+            setAdmin(true);
+          } else {
+            setAdmin(false);
+          }
+        }
+      });
+  }, [user.email]);
+  console.log(admin);
   // login user with email and pass
   const loginUser = (email, password, location, history) => {
     setIsLoading(true);
@@ -153,7 +168,7 @@ const useFirebase = () => {
     logOut,
     products,
 
-    // admin,
+    admin,
   };
 };
 

@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 
 import Order from '../Order/Order';
 
-const MyOrders = () => {
+const AllOrders = () => {
   const [orders, setOrders] = useState([]);
-  const { user } = useAuth();
 
   // get all orders
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
+    fetch('http://localhost:5000/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -23,4 +21,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default AllOrders;
