@@ -45,12 +45,13 @@ const ManageProduct = (props) => {
             <i className="text-xl font-bold">{name}</i>
           </div>
 
-          <div
-            onClick={() => {
-              handleRemoveItem(_id);
-            }}
-          >
-            <button className="homeCardBtns rounded  text-white w-20 sm:text-2xl bg-red-500">
+          <div>
+            <button
+              onClick={() => {
+                handleRemoveItem(_id);
+              }}
+              className="homeCardBtns rounded  text-white w-20 sm:text-2xl bg-red-500"
+            >
               Remove
             </button>
           </div>

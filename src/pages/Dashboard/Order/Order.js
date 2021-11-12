@@ -2,7 +2,7 @@ import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import swal from 'sweetalert';
 const Order = (props) => {
-  const { productName, name, productImg, _id, userImg } = props.order;
+  const { productName, name, productImg, _id, userImg, status } = props.order;
   const { user } = useAuth();
 
   const handleRemoveItem = (id) => {
@@ -22,6 +22,18 @@ const Order = (props) => {
       return;
     }
   };
+
+  const handleUpdateStatus = (id) => {
+    fetch(`http://localhost:5000/orders/${id}`, {
+      method: 'PUT',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        swal('status updated successfully');
+        window.location.reload();
+      });
+  };
+
   return (
     <div>
       <div class="md:w-full w-full  my-5 bg-gray-800 flex justify-center items-center rounded-lg">
@@ -53,7 +65,7 @@ const Order = (props) => {
                 </div>
               </label>
               <div class="absolute bg-green-400 rounded-md font-semibold text-xs text-gray-100 md:p-2 p-1 right-4 bottom-0">
-                pending
+                {status}
               </div>
             </div>
             <div class="relative flex-1 flex flex-col  gap-2 px-2 md:px-4">
@@ -63,9 +75,17 @@ const Order = (props) => {
               <label class="text-green-800 text-4xl font-bold">$1.2M</label> */}
               <div
                 onClick={() => {
+                  handleUpdateStatus(_id);
+                }}
+                class="absolute bg-green-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-13 right-14  bottom-20"
+              >
+                Update Status?
+              </div>
+              <div
+                onClick={() => {
                   handleRemoveItem(_id);
                 }}
-                class="absolute bg-red-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-14 right-5 md:bottom-10 bottom-6"
+                class="absolute bg-red-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-14 right-14 md:bottom-10 bottom-6"
               >
                 Remove Item
               </div>
