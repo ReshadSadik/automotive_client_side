@@ -83,6 +83,7 @@ const Review = () => {
                   <option value="3">3 Star</option>
                   <option value="2">2 Star</option>
                   <option value="1">1 Star</option>
+                  <option value="0">0 Star</option>
                 </select>
               </div>
             </div>
