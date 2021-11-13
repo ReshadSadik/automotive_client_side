@@ -2,7 +2,6 @@ input {
   outline: none;
 }
 input.static::placeholder {
-  color: black;
 }
 input::placeholder {
   font-weight: 500;

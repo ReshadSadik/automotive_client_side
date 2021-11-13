@@ -22,15 +22,16 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [products, setProducts] = useState([]);
+  const [stateChanged, setStateChanged] = useState(1);
 
   const [admin, setAdmin] = useState(false);
 
   //get all products start
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://cryptic-bayou-87271.herokuapp.com/products')
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [stateChanged]);
 
   // register a new user
   const registerUser = (email, password, name, history) => {
@@ -60,7 +61,7 @@ const useFirebase = () => {
   // check is admin
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/admin/${user.email}`)
+    fetch(`https://cryptic-bayou-87271.herokuapp.com/users/admin/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -138,7 +139,7 @@ const useFirebase = () => {
   };
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/users/${user.email}`)
+  //   fetch(`https://cryptic-bayou-87271.herokuapp.com/users/${user.email}`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       // setAdmin(data.admin);
@@ -147,7 +148,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('http://localhost:5000/users', {
+    fetch('https://cryptic-bayou-87271.herokuapp.com/users', {
       method: method,
       headers: {
         'content-type': 'application/json',
@@ -167,7 +168,8 @@ const useFirebase = () => {
     signInWithGoogle,
     logOut,
     products,
-
+    stateChanged,
+    setStateChanged,
     admin,
   };
 };

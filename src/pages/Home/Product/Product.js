@@ -21,8 +21,8 @@ const Product = (props) => {
         style={styleSheet}
         className="container card   lg:w-96 md:w-80 w-64  pt-12 px-4 text-center  md:mx-14 mx-10   my-10  shadow-lg rounded-lg"
       >
-        <div className=" text-white  z-50  background flex-auto">
-          <div className="text-gray-600 p-3 text-center inline-flex mr-56 items-center justify-center w-40 mb-32 h-12 mb-5 shadow-lg rounded-full bg-yellow-500">
+        <div className=" text-white  z-50   background flex-auto">
+          <div className="text-gray-600 p-3 text-center inline-flex mr-56 items-center justify-center w-40 mb-32 h-12 mb-10  shadow-lg rounded-full bg-yellow-500">
             <i className="text-xl font-bold">{name}</i>
           </div>
           <Link to={`/purchase/${_id}`}>

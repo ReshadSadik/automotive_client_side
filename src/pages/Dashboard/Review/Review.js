@@ -21,7 +21,7 @@ const Review = () => {
       reviewText: data.reviewText,
     };
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://cryptic-bayou-87271.herokuapp.com/reviews', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -8,7 +8,7 @@ const AllOrders = () => {
   // get all orders
 
   useEffect(() => {
-    fetch('http://localhost:5000/orders')
+    fetch('https://cryptic-bayou-87271.herokuapp.com/orders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);

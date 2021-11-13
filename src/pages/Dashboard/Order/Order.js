@@ -10,7 +10,7 @@ const Order = (props) => {
       'are you sure you want to remove this item ? '
     );
     if (accept) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://cryptic-bayou-87271.herokuapp.com/orders/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -24,7 +24,7 @@ const Order = (props) => {
   };
 
   const handleUpdateStatus = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://cryptic-bayou-87271.herokuapp.com/orders/${id}`, {
       method: 'PUT',
     })
       .then((res) => res.json())

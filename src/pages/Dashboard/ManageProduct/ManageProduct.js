@@ -21,7 +21,7 @@ const ManageProduct = (props) => {
       'are you sure you want to remove this item ? '
     );
     if (accept) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://cryptic-bayou-87271.herokuapp.com/products/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

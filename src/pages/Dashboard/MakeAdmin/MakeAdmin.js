@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     setEmail(email);
   };
   const handleAdmin = (e) => {
-    fetch(`http://localhost:5000/users/${email}`, {
+    fetch(`https://cryptic-bayou-87271.herokuapp.com/users/${email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

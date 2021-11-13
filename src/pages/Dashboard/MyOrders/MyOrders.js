@@ -10,7 +10,7 @@ const MyOrders = () => {
   // get all orders
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
+    fetch(`https://cryptic-bayou-87271.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);

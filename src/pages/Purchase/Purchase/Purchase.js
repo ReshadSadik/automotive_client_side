@@ -24,7 +24,7 @@ const Purchase = () => {
       additionalInfo: data,
     };
 
-    fetch('http://localhost:5000/order', {
+    fetch('https://cryptic-bayou-87271.herokuapp.com/order', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

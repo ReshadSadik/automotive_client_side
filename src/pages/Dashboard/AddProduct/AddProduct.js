@@ -1,12 +1,16 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
+import useAuth from '../../../hooks/useAuth';
 const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
+  const { stateChanged, setStateChanged } = useAuth();
+  const history = useHistory();
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch('http://localhost:5000/products', {
+    fetch('https://cryptic-bayou-87271.herokuapp.com/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -19,6 +23,8 @@ const AddProduct = () => {
           swal('Product added successfully');
 
           reset();
+          setStateChanged(stateChanged + 1);
+          history.replace('/explore');
         }
       });
   };
