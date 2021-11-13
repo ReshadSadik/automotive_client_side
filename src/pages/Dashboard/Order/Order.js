@@ -51,14 +51,14 @@ const Order = (props) => {
                 />
               </label>
             </div>
-            <div class="relative h-36 w-96 flex-1 flex flex-col gap-2 px-2 md:px-4">
+            <div class="relative h-36 xl:w-96 w-56 flex-1 flex flex-col gap-2 px-2 md:px-4">
               <label class="text-gray-800 text-base font-semibold tracking-wider">
                 {productName}
               </label>
               <label class="text-green-800 xl:mt-0 mt-1 text-4xl font-bold">
                 <div className="">
                   <img
-                    className=" rounded-full w-28 h-24 mx-auto "
+                    className=" rounded-full xl:w-28 w-20 h-20 xl:h-24 mx-auto "
                     src={productImg}
                     alt=""
                   />
@@ -77,7 +77,7 @@ const Order = (props) => {
                 onClick={() => {
                   handleUpdateStatus(_id);
                 }}
-                class="absolute bg-green-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-13 right-14  bottom-20"
+                class="absolute bg-green-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  px-2 py-2 md:right-14 right-2  bottom-20"
               >
                 Update Status?
               </div>
@@ -85,7 +85,7 @@ const Order = (props) => {
                 onClick={() => {
                   handleRemoveItem(_id);
                 }}
-                class="absolute bg-red-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-14 right-14 md:bottom-10 bottom-6"
+                class="absolute bg-red-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  p-2 md:right-14 right-2 md:bottom-10 bottom-6"
               >
                 Remove Item
               </div>
