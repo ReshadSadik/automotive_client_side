@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
+import Rating from 'react-rating';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -33,14 +35,6 @@ const Reviews = () => {
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-600 pb-2">
             What client's say about us
           </h1>
-
-          <p className="text-gray-500 font-normal text-base">
-            <span className="text-green-600 font-semibold text-xl">FITLAB</span>{' '}
-            is a good community to help you stay fit in the future! Getting
-            started is easy. You will be able to choose the best set of
-            exercises for your situation, like working out at home or in gym,
-            and design a training plan tailored to your goals
-          </p>
         </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {reviews &&
@@ -59,6 +53,15 @@ const Reviews = () => {
                     <p className="text-base text-yellow-400 font-semibold">
                       Buyer
                     </p>
+                    <Rating
+                      emptySymbol={<AiOutlineStar></AiOutlineStar>}
+                      fullSymbol={
+                        <AiFillStar className="text-yellow-500"></AiFillStar>
+                      }
+                      fractions={2}
+                      initialRating={review.star}
+                      readonly
+                    />
                   </div>
                 </div>
                 <div className=" ">

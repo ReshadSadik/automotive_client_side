@@ -1,11 +1,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Rating from 'react-rating';
 import { useHistory } from 'react-router-dom';
 import { NavHashLink as Link } from 'react-router-hash-link';
 import swal from 'sweetalert';
 import useAuth from '../../../hooks/useAuth';
 import reviewLogo from '../../../images/review.svg';
+import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import './Review.css';
+
 const Review = () => {
   const { user } = useAuth();
   const history = useHistory();
@@ -19,6 +22,7 @@ const Review = () => {
       userName,
       img: user.photoURL,
       reviewText: data.reviewText,
+      star: data.star,
     };
 
     fetch('https://cryptic-bayou-87271.herokuapp.com/reviews', {
@@ -67,6 +71,21 @@ const Review = () => {
               {...register('reviewText')}
               placeholder="write a review"
             />
+            <div>
+              <div className="flex justify-center mt-1 text-yellow-400 w-full">
+                <select
+                  className="text-sm w-96 bg-gray-100 flex flex-row justify-between h-12 pl-5 rounded-lg my-5 pr-5"
+                  name="Gender"
+                  {...register('star')}
+                >
+                  <option value="5">5 Star</option>
+                  <option value="4">4 Star</option>
+                  <option value="3">3 Star</option>
+                  <option value="2">2 Star</option>
+                  <option value="1">1 Star</option>
+                </select>
+              </div>
+            </div>
 
             {/* <Link
             smooth
