@@ -13,7 +13,7 @@ const ManageProduct = (props) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: ' top',
     paddingTop: '10px',
-    zIndex: '2',
+    zIndex: '-2',
   };
 
   const handleRemoveItem = (id) => {
