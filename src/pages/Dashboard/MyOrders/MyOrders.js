@@ -17,8 +17,13 @@ const MyOrders = () => {
 
   return (
     <div className=" grid xl:grid-cols-2 grid-cols-1 mt-14 xl:ml-28 ml-0 gap-5 container">
-      {orders &&
-        orders.map((order) => <Order order={order} key={order._id}></Order>)}
+      {orders.length ? (
+        orders.map((order) => <Order order={order} key={order._id}></Order>)
+      ) : (
+        <h2 className="text-black ml-96  text-4xl font-bold text-center">
+          no order placed
+        </h2>
+      )}
     </div>
   );
 };

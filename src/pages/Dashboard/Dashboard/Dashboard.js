@@ -54,7 +54,7 @@ function Dashboard() {
           <div class="md:relative mx-auto   lg:float-left  lg:px-6">
             <ul className="md:block flex justify-center items-center ">
               {!admin ? (
-                <div>
+                <div className="xl:block flex">
                   <li className="mx-2 bg-gray-200   my-4 px-3 rounded-xl text-black py-1">
                     <Link
                       className="text-sm text-black  focus:text-yellow-700 
@@ -73,7 +73,10 @@ function Dashboard() {
                       Review
                     </Link>
                   </li>
-                  <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+                  <li
+                    className="mx-2 bg-gray-200 my-4 xl:px-3
+                  px-6 rounded-xl text-black py-1"
+                  >
                     <Link
                       className="text-sm font-bold focus:text-yellow-700 
                  focus:underline  "
@@ -84,40 +87,40 @@ function Dashboard() {
                   </li>
                 </div>
               ) : (
-                <div>
-                  <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+                <div className="xl:block flex">
+                  <li className="xl:mx-2  mx-0 bg-gray-200 my-4 xl:px-3 px-0 rounded-xl mr-1  text-black py-1">
                     <Link
                       to={`${url}`}
                       className="text-sm font-bold focus:text-yellow-700 
-                 focus:underline  "
+                 focus:underline block  leading-tight "
                     >
-                      Manage All Orders
+                      Manage Orders
                     </Link>
                   </li>
-                  <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+                  <li className="xl:mx-2 mx-0 bg-gray-200 my-4 xl:px-3 px-0 rounded-xl mr-1 text-black py-1">
                     <Link
                       to={`${url}/addproduct`}
                       className="text-sm font-bold focus:text-yellow-700 
-                 focus:underline  "
+                 focus:underline  block  leading-tight"
                     >
-                      Add a Product
+                      Add Product
                     </Link>
                   </li>
 
-                  <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+                  <li className="xl:mx-2 mx-0 bg-gray-200 my-4 xl:px-3 px-0 rounded-xl mr-1 text-black py-1">
                     <Link
                       to={`${url}/makeadmin`}
                       className="text-sm font-bold focus:text-yellow-700 
-                 focus:underline  "
+                 focus:underline  block  leading-tight "
                     >
                       Make Admin
                     </Link>
                   </li>
-                  <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+                  <li className="xl:mx-2 mx-0 bg-gray-200 my-4 xl:px-3 px-0 rounded-xl mr-1 text-black py-1">
                     <Link
                       to={`${url}/manageproducts`}
                       className="text-sm font-bold focus:text-yellow-700 
-                 focus:underline  "
+                 focus:underline  block  leading-tight"
                     >
                       Manage Products
                     </Link>
@@ -125,10 +128,10 @@ function Dashboard() {
                 </div>
               )}
 
-              <li className="mx-2 bg-gray-200 my-4 px-3 rounded-xl text-black py-1">
+              <li className="xl:mx-2  bg-gray-200 my-4 xl:px-3 px-1 rounded-md  text-black py-1">
                 <div
                   className="text-sm font-bold focus:text-yellow-700 
-                 focus:underline  "
+                 focus:underline  xl:w-14 w-full mx-auto block  leading-tight"
                   onClick={logOut}
                 >
                   Log Out

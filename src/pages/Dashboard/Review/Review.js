@@ -53,7 +53,7 @@ const Review = () => {
                 style={{ outline: 'none' }}
                 readOnly
                 type="text"
-                className="text-sm xl:w-80 w-56 bg-gray-500 font-bold flex flex-row justify-between  h-8 pl-5 text-center rounded-lg my-5 static tt"
+                className="text-sm xl:w-80 w-56 bg-gray-50 font-bold flex text-white flex-row justify-between  h-8 pl-5 text-center rounded-lg my-5 tt"
                 {...register('userName')}
                 placeholder={`post as :  ${user.displayName} `}
               />

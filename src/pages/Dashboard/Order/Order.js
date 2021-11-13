@@ -3,7 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import swal from 'sweetalert';
 const Order = (props) => {
   const { productName, name, productImg, _id, userImg, status } = props.order;
-  const { user } = useAuth();
+  const { user, admin } = useAuth();
 
   const handleRemoveItem = (id) => {
     const accept = window.confirm(
@@ -73,14 +73,17 @@ const Order = (props) => {
                 Total Profit
               </label>
               <label class="text-green-800 text-4xl font-bold">$1.2M</label> */}
-              <div
-                onClick={() => {
-                  handleUpdateStatus(_id);
-                }}
-                class="absolute bg-green-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  px-2 py-2 md:right-14 right-2  bottom-20"
-              >
-                Update Status?
-              </div>
+              {admin && (
+                <div
+                  onClick={() => {
+                    handleUpdateStatus(_id);
+                  }}
+                  class="absolute bg-green-600 rounded-md font-semibold text-xs text-gray-100 text-center cursor-pointer  px-2 py-2 md:right-14 right-2  bottom-20"
+                >
+                  Update Status?
+                </div>
+              )}
+
               <div
                 onClick={() => {
                   handleRemoveItem(_id);

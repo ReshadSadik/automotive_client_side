@@ -51,7 +51,7 @@ const Purchase = () => {
         <div className=" ">
           <div
             className="grid container mx-auto lg:mt-56 
-        mt-20 grid-cols-1   md:grid-cols-12 gap-2"
+        mt-20 grid-cols-1  md:grid-cols-12 gap-2"
           >
             <div className="col-span-7  ">
               <img className="mx-auto" src={purchaseProduct.img_lg} alt="" />
@@ -63,7 +63,7 @@ const Purchase = () => {
                 {purchaseProduct.price} <span>/per month</span>
               </p>
             </div>
-            <div className="col-span-5  mx-auto">
+            <div className="col-span-5  mx-auto ">
               {' '}
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
@@ -100,7 +100,7 @@ const Purchase = () => {
                 />
 
                 <input
-                  className="text-black font-bold py-2 px-7 w-80 rounded-md bg-yellow-400 cursor-pointer"
+                  className="text-black font-bold py-2 px-7 w-80 rounded-md bg-yellow-400 cursor-pointer mb-10"
                   type="submit"
                   value="place order"
                 />
