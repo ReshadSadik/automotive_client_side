@@ -1,10 +1,9 @@
 # AUTOMOTIVE
 
-Take your dream journey to your favourite place with a brand new car from us!
+You can find and purchase any car of your liking here.
 
 Live site to the website [AutoMotive](https://automotivenow.netlify.app/)
 
-- You can find and purchase any car of your liking here.
 - Implemented firebase for user authentication
 - Utilized MongoDB to store the data and showed them in UI
 - you can use stripe payment gateway to order for your desired car
