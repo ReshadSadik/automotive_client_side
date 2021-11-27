@@ -8,6 +8,7 @@ import Register from './pages/Login/Register/Register';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Explore from './pages/Explore/Explore/Explore';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import Success from './pages/Dashboard/Pay/Success';
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route exact path="/explore">
               <Explore></Explore>
+            </Route>
+            <Route exact path="/success/:id">
+              <Success></Success>
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
