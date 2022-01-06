@@ -1,38 +1,97 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import banner from '../../../images/lambo2.jpg';
+import AutoTyping, { BlinkCursor } from 'react-auto-typing';
+import Carousel from 'react-elastic-carousel';
+
+import styles from './Banner.module.css';
+import BannerCarousel from './Carousel/BannerCarousel';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className=" ">
-      <div
-        className="bg-cover bg-center    h-auto text-white xl:py-72 py-48 object-fill"
-        style={{
-          backgroundImage: `url(${banner}`,
-          backgroundPosition: 'center',
-          paddingTop: '50px',
-          backgroundSize: 'cover',
-          width: '100%',
-        }}
-      >
-        <div className="md:w-1/2 bg-gray-200    text-black    rounded">
-          <p className="font-bold text-yellow-600 text-sm xl:mt-36 mt-28  uppercase pt-5 ">
-            THE ALL NEW
-          </p>
+    <div className={styles.banner}>
+      <div className="text-5xl font-bold uppercase text-green-600 mt-10">
+        <AutoTyping
+          active // <boolean>
+          textRef="find your dream car here" // <string>
+          writeSpeed={100} // <number>
+          deleteSpeed={40} // <number>
+          delayToWrite={500} // <number>
+          delayToDelete={3000} // <number>
+        />
+        <BlinkCursor
+          active // <boolean>
+          blinkSpeed={500} // <number>
+        />
+      </div>
+      <div className="xl:flex block items-center   container mx-auto mt-56">
+        <div
+          className="bg-cover w-3/6 bg-center  text-white xl:py-2 py-48 object-fill"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
+          <div className="   hi  text-yellow-500  font-bold text-xl  rounded">
+            <p className="">THE ALL NEW</p>
+            {/*
           <hr className="bg-red-500" />
           <p className="text-5xl font-bold   mb-8">Corolla 2021 TUNDRA</p>
           <p className="text-sm mb-10 leading-none px-10 font-bolder">
             Go Beyond Extraordinary. With Captivating details inside and out ,
             maek a grand entrance wherever you go!
-          </p>
-          <Link
-            to="/explore"
-            className="bg-yellow-400 py-4 px-8 text-black font-bold uppercase text-xs rounded-xl hover:bg-gray-200 hover:text-gray-800"
-          >
-            Explore All
-          </Link>
+          </p> */}
+            <div className="text-5xl text-green-600 font-bold">
+              <Carousel
+                infinite
+                verticalMode
+                className=""
+                enableAutoPlay
+                autoPlaySpeed={2500}
+                itemsToShow={1}
+                renderPagination={({ pages, activePage, onClick }) => {
+                  return <div></div>;
+                }}
+              >
+                <h2>Corolla TUNDRA</h2>
+                <h2>RAV4 2022 </h2>
+                <h2>TOYOTA G HYBRID</h2>
+              </Carousel>
+            </div>
+          </div>
+          {/* <Link
+          to="/explore"
+          className="bg-yellow-400 py-4 px-8  text-black font-bold uppercase text-xs rounded-xl hover:bg-gray-200 hover:text-gray-800"
+        >
+          Explore All
+        </Link> */}
         </div>
+        <div
+          className={styles.bannerCarousel}
+          data-aos="fade-top"
+          data-aos-duration="3000"
+        ></div>
+        <div
+          className={styles.bannerCarousel2}
+          data-aos="fade-left"
+          data-aos-duration="3000"
+        ></div>
+        <BannerCarousel></BannerCarousel>
       </div>
+      <svg
+        className={styles.bannerSVG}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#00897b"
+          fill-opacity="1"
+          d="M0,256L60,234.7C120,213,240,171,360,165.3C480,160,600,192,720,186.7C840,181,960,139,1080,106.7C1200,75,1320,53,1380,42.7L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
     </div>
   );
 };

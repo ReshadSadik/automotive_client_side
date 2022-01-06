@@ -1,0 +1,44 @@
+.bannerText {
+  font-family: 'Mochiy Pop P One', sans-serif;
+  color: red;
+}
+/* .bannerCarousel::before {
+  position: relative;
+  top: 85px;
+  left: 230px;
+  width: 100px;
+  content: '';
+  padding: 60px;
+  background-color: red;
+  border-top: 20px solid blue;
+  border-right: 20px solid blue;
+} */
+
+.bannerCarousel {
+  position: relative;
+  top: -140px;
+  left: 790px;
+
+  content: '';
+  padding: 40px;
+
+  border-top: 20px solid orange;
+  border-right: 20px solid orange;
+}
+.bannerCarousel2 {
+  position: relative;
+  top: -150px;
+  left: 700px;
+  content: '';
+  padding: 40px;
+  border-top: 20px solid #00897b;
+  border-right: 20px solid #00897b;
+}
+
+.bannerSVG {
+  position: relative;
+  margin: 0;
+  top: -80px;
+  padding: 0;
+  z-index: -2;
+}

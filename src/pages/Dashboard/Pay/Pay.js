@@ -9,9 +9,9 @@ const stripePromise = loadStripe(
 const Pay = () => {
   return (
     <div className="mx-56 mt-40">
-      <Elements stripe={stripePromise}>
+      {/* <Elements stripe={stripePromise}>
         <CheckoutForm />
-      </Elements>
+      </Elements> */}
     </div>
   );
 };

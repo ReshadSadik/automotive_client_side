@@ -8,7 +8,7 @@ const Navigation = () => {
   const { user, logOut } = useAuth();
   return (
     <div>
-      <div className=" bg-gray-900 shadow-lg font-sans leading-normal tracking-normal">
+      <div className=" font-sans leading-normal tracking-normal">
         <nav
           //   style={{
           //     background: `linear-gradient(360deg, rgba(44,45,49,0.9612219887955182) 0%, rgba(12,102,74,0.9528186274509804) 13%, rgba(5,150,105,1) 100%)`,
@@ -17,7 +17,7 @@ const Navigation = () => {
         >
           <div className=" md:ml-40 ml-0  flex-shrink-0 text-white mr-6">
             <a
-              className="text-purple-200 font-extrabold no-underline hover:text-white hover:no-underline flex items-center"
+              className="text-yellow-500 font-extrabold no-underline hover:text-white hover:no-underline flex items-center"
               href="/"
             >
               <span className="text-2xl mx-auto flex align-center">
@@ -54,7 +54,7 @@ const Navigation = () => {
             >
               <li className="mr-3">
                 <Link
-                  className="inline-block font-bold text-white py-2 px-4 "
+                  className="inline-block font-bold text-gray-500 py-2 px-4 "
                   to="/home"
                 >
                   HOME
@@ -62,7 +62,7 @@ const Navigation = () => {
               </li>
               <li className="mr-3">
                 <Link
-                  className="inline-block font-bold text-white   py-2 px-4"
+                  className="inline-block font-bold text-gray-500   py-2 px-4"
                   to="/explore"
                 >
                   EXPLORE
@@ -71,7 +71,7 @@ const Navigation = () => {
               {user.email && (
                 <li className="mr-3">
                   <Link
-                    className="inline-block font-bold  no-underline hover:text-gray-200 hover:text-underline text-white py-2 px-4"
+                    className="inline-block font-bold  no-underline hover:text-gray-200 hover:text-underline text-gray-500 py-2 px-4"
                     to="/dashboard"
                   >
                     DASHBOARD

@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import Product from '../Product/Product';
+import Carousel from 'react-elastic-carousel';
 
 const Products = () => {
   const { products } = useAuth();
