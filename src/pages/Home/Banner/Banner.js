@@ -116,6 +116,14 @@ const Banner = () => {
           d="M0,256L60,234.7C120,213,240,171,360,165.3C480,160,600,192,720,186.7C840,181,960,139,1080,106.7C1200,75,1320,53,1380,42.7L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>
+      {/* <!-- all effects aanimaton start --> */}
+      <div class={styles.plusSpin}></div>
+      <div class={styles.squareSpin}></div>
+      {/* <div class={styles.tria}"triangle-spin"></div> */}
+      <div class={styles.roundSpin1}></div>
+      <div class={styles.roundSpin2}></div>
+
+      {/* <!-- all effects aanimaton end --> */}
     </div>
   );
 };

@@ -42,3 +42,110 @@
   padding: 0;
   z-index: -2;
 }
+
+/* effects area */
+
+/* plus spin */
+
+.plusSpin {
+  position: absolute;
+  top: 220px;
+  left: 40%;
+  width: 35px;
+  height: 3px;
+  background-color: tomato;
+  border-radius: 50%;
+  animation: spin 10s linear infinite;
+  z-index: 2;
+}
+.plusSpin::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35px;
+  height: 3px;
+  background-color: tomato;
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: rotate(-180deg);
+  }
+  50% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* square spin */
+
+.squareSpin {
+  position: absolute;
+  bottom: 180px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid green;
+  animation: spin 10s linear infinite;
+  z-index: -7;
+}
+
+/* circle spin 1 */
+
+.roundSpin1 {
+  position: absolute;
+  bottom: 300px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgb(228, 126, 10);
+  border-radius: 50%;
+  /* transform: translate3d(140px, 90px, -135px); */
+  animation: run 15s ease-out infinite;
+}
+@keyframes run {
+  0%,
+  100% {
+    transform: translate3d(0);
+  }
+  30% {
+    transform: translate3d(120px, -130px, -13px);
+  }
+  60% {
+    transform: translate3d(273px, -50px, -135px);
+  }
+  90% {
+    transform: translate3d(140px, 90px, -135px);
+  }
+}
+
+/* circle spin 2 */
+.roundSpin2 {
+  position: absolute;
+  top: 300px;
+  right: 300px;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgb(228, 126, 10);
+  border-radius: 50%;
+  /* transform: translate3d(140px, 90px, -135px); */
+  animation: run1 15s ease-out infinite;
+}
+@keyframes run1 {
+  0%,
+  100% {
+    transform: translate3d(0);
+  }
+  30% {
+    transform: translate3d(140px, 90px, -135px);
+  }
+  55% {
+    transform: translate3d(273px, -50px, -135px);
+  }
+  75% {
+    transform: translate3d(120px, -130px, -13px);
+  }
+}
