@@ -46,19 +46,43 @@ const Banner = () => {
           </p> */}
             <div className="text-5xl text-green-600 font-bold">
               <Carousel
-                infinite
+                infiniteLoop
                 verticalMode
                 className=""
                 enableAutoPlay
-                autoPlaySpeed={2500}
+                autoPlaySpeed={2200}
                 itemsToShow={1}
                 renderPagination={({ pages, activePage, onClick }) => {
                   return <div></div>;
                 }}
               >
-                <h2>Corolla TUNDRA</h2>
-                <h2>RAV4 2022 </h2>
-                <h2>TOYOTA G HYBRID</h2>
+                <div>
+                  <h2>COROLLA TUNDRA</h2>
+                  <p className=" mt-2 text-sm text-gray-500">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Itaque fugit quas culpa necessitatibus. Vitae necessitatibus
+                    odit cupiditate minus reprehenderit laudantium consequuntur
+                    natus esse.
+                  </p>
+                </div>
+                <div>
+                  <h2>RAV 4 INFINITE</h2>
+                  <p className=" mt-2 text-sm text-gray-500">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Itaque fugit quas culpa necessitatibus. Vitae necessitatibus
+                    odit cupiditate minus reprehenderit laudantium consequuntur
+                    natus esse.
+                  </p>
+                </div>
+                <div>
+                  <h2>MITSUBISHI HYBRID</h2>
+                  <p className=" mt-2 text-sm text-gray-500">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Itaque fugit quas culpa necessitatibus. Vitae necessitatibus
+                    odit cupiditate minus reprehenderit laudantium consequuntur
+                    natus esse.
+                  </p>
+                </div>
               </Carousel>
             </div>
           </div>
