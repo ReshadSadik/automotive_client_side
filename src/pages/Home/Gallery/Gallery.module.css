@@ -1,0 +1,13 @@
+.galleryBlob {
+  position: relative;
+  left: -60px;
+  /* top: 180px; */
+  z-index: 4;
+}
+.galleryBG {
+  padding: 60px 0;
+  display: flex;
+  background-image: url('../../../images/gallery-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
