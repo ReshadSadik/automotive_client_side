@@ -84,7 +84,7 @@
 
 .squareSpin {
   position: absolute;
-  bottom: 180px;
+  bottom: 170px;
   left: 50%;
   width: 30px;
   height: 30px;
@@ -147,5 +147,34 @@
   }
   75% {
     transform: translate3d(120px, -130px, -13px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bannerCarousel {
+    width: 60px;
+    top: 170px;
+    left: 270px;
+    padding: 10px;
+    border-top: 0;
+    border-bottom: 10px solid #ffa300;
+    border-right: 10px solid #ffa300;
+  }
+  .bannerCarousel2 {
+    width: 60px;
+    top: 0px;
+    left: 270px;
+    padding: 10px;
+    border-top: 10px solid #00897b;
+    border-right: 10px solid #00897b;
+  }
+  .plusSpin,
+  .roundSpin1,
+  .roundSpin2 {
+    display: none;
+  }
+  .squareSpin {
+    bottom: 150px;
+    left: 60px;
   }
 }

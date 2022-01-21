@@ -8,40 +8,18 @@ const Navigation = () => {
   const { user, logOut } = useAuth();
   return (
     <div>
-      <div className=" font-sans leading-normal tracking-normal">
-        <nav
-          //   style={{
-          //     background: `linear-gradient(360deg, rgba(44,45,49,0.9612219887955182) 0%, rgba(12,102,74,0.9528186274509804) 13%, rgba(5,150,105,1) 100%)`,
-          //   }}
-          className="flex   items-center  justify-between flex-wrap  px-6   w-full z-10 top-0 "
-        >
+      <div className=" font-sans flex items-center leading-normal tracking-normal">
+        <nav className="flex items-center justify-between flex-wrap  px-6   w-full z-10 top-0 ">
           <div className=" md:ml-40 ml-0  flex-shrink-0 text-white mr-6">
             <a
               className="text-yellow-500 font-extrabold no-underline hover:text-white hover:no-underline flex items-center"
               href="/"
             >
               <span className="text-2xl mx-auto flex align-center">
-                <img className="w-20 h-20   mr-5" src={logo} alt="" />
+                <img className="w-20 h-20 mr-5" src={logo} alt="" />
               </span>
               <h4>AUTOMOTIVE</h4>
             </a>
-          </div>
-
-          <div className="block lg:hidden">
-            <button
-              onClick={toggle}
-              id="nav-toggle"
-              className="flex items-center  bg-white px-3 py-2 border rounded text-green-600  border-white  hover:border-white"
-            >
-              <svg
-                className="fill-current h-3 w-3"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-              </svg>
-            </button>
           </div>
 
           <div
@@ -123,6 +101,22 @@ const Navigation = () => {
             </div>
           </div>
         </nav>
+        <div className="block lg:hidden">
+          <button
+            onClick={toggle}
+            id="nav-toggle"
+            className="flex items-center  bg-white px-3 py-2 border rounded text-green-600  border-white  hover:border-white"
+          >
+            <svg
+              className="fill-current h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );

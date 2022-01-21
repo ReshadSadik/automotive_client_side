@@ -4,7 +4,7 @@ import styles from './Gallery.module.css';
 const Gallery = () => {
   return (
     <div className={styles.galleryBG}>
-      <div className="flex container items-center  mx-auto ">
+      <div className="flex container xl:flex-nowrap flex-wrap items-center  mx-auto ">
         <div className="flex-1 p-10  bg-gray-100  rounded">
           <div>
             <div className={styles.galleryBlob}>

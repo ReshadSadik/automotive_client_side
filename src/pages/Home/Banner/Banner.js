@@ -15,7 +15,7 @@ const Banner = () => {
   }, []);
   return (
     <div className={styles.banner}>
-      <div className="text-5xl font-bold uppercase text-green-600 mt-10">
+      <div className="xl:text-5xl text-xl font-bold uppercase text-green-600 mt-10">
         <AutoTyping
           active // <boolean>
           textRef="find your dream car here" // <string>
@@ -29,9 +29,9 @@ const Banner = () => {
           blinkSpeed={500} // <number>
         />
       </div>
-      <div className="xl:flex block items-center   container mx-auto mt-56">
+      <div className="xl:flex block items-center   container mx-auto xl:mt-36 mt-10">
         <div
-          className="bg-cover w-3/6 bg-center  text-white xl:py-2 py-48 object-fill"
+          className="bg-cover xl:w-3/6 w-full bg-center  text-white xl:py-2  object-fill"
           data-aos="fade-right"
           data-aos-duration="2000"
         >
@@ -57,7 +57,7 @@ const Banner = () => {
                 }}
               >
                 <div>
-                  <h2>COROLLA TUNDRA</h2>
+                  <h2 className=" xl:text-4xl text-sm">COROLLA TUNDRA</h2>
                   <p className=" mt-2 text-sm text-gray-500">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Itaque fugit quas culpa necessitatibus. Vitae necessitatibus
@@ -66,7 +66,7 @@ const Banner = () => {
                   </p>
                 </div>
                 <div>
-                  <h2>RAV 4 INFINITE</h2>
+                  <h2 className=" xl:text-4xl text-sm">RAV 4 INFINITE</h2>
                   <p className=" mt-2 text-sm text-gray-500">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Itaque fugit quas culpa necessitatibus. Vitae necessitatibus
@@ -75,7 +75,7 @@ const Banner = () => {
                   </p>
                 </div>
                 <div>
-                  <h2>MITSUBISHI HYBRID</h2>
+                  <h2 className=" xl:text-4xl text-sm">MITSUBISHI HYBRID</h2>
                   <p className=" mt-2 text-sm text-gray-500">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Itaque fugit quas culpa necessitatibus. Vitae necessitatibus

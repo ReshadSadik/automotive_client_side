@@ -16,8 +16,7 @@ const BannerCarousel = () => {
     <div
       data-aos="fade-left"
       data-aos-duration="1000"
-      style={{ width: '800px', height: '250px' }}
-      className="styling-example"
+      className="styling-example bannerImg"
     >
       <Carousel
         className=""
